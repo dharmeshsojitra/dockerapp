@@ -12,7 +12,7 @@ public class HelloController {
     }
 
     @RequestMapping("/world/{name}")
-    String hello(@PathVariable String name) {
+    String sayHelloWorld(@PathVariable String name) {
         return "Hello " + name + ", welcome to the world !";
     }
 }
