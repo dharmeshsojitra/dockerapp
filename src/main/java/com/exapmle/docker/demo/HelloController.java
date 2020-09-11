@@ -10,4 +10,9 @@ public class HelloController {
     String hello(@PathVariable String name) {
         return "Hi " + name + " !";
     }
+
+    @RequestMapping("/world/{name}")
+    String hello(@PathVariable String name) {
+        return "Hello " + name + ", welcome to the world !";
+    }
 }
