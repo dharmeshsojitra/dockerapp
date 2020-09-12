@@ -29,7 +29,7 @@ USER root
 # Make sure the distribution is available from a well-known place
 RUN cd /tmp \
 	&& groupadd -r jboss \
-	&& useradd -r -g jboss -d /opt/wildfly -s /sbin/nologin wildfly
+	&& useradd -r -g jboss -d /opt/wildfly -s /sbin/nologin wildfly \
 	&& wget https://download.jboss.org/wildfly/16.0.0.Final/wildfly-16.0.0.Final.tar.gz \
     && tar xf wildfly-$WILDFLY_VERSION.tar.gz -C /opt \
     && ln -s /opt/$WILDFLY_VERSION /opt/wildfly \
