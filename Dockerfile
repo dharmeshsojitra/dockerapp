@@ -32,7 +32,7 @@ RUN cd /tmp \
 	&& useradd -r -g jboss -d /opt/wildfly -s /sbin/nologin jboss \
 	&& wget https://download.jboss.org/wildfly/16.0.0.Final/wildfly-16.0.0.Final.tar.gz \
     && tar xf wildfly-$WILDFLY_VERSION.tar.gz -C /opt \
-    && ln -s /opt/$WILDFLY_VERSION /opt/wildfly \
+    # && ln -s /opt/$WILDFLY_VERSION /opt/wildfly \
     && rm wildfly-$WILDFLY_VERSION.tar.gz \
     && chown -R jboss: ${JBOSS_HOME} \
     && chmod -R g+rw ${JBOSS_HOME}
