@@ -27,11 +27,10 @@ USER root
 
 # Add the WildFly distribution to /opt, and make wildfly the owner of the extracted tar content
 # Make sure the distribution is available from a well-known place
-RUN cd $HOME \
+RUN cd /tmp \
 	&& wget https://download.jboss.org/wildfly/16.0.0.Final/wildfly-16.0.0.Final.tar.gz \
-    && tar xf wildfly-$WILDFLY_VERSION.tar.gz \
-    && mkdir /opt/jboss/wildfly \
-    && mv $HOME/wildfly-$WILDFLY_VERSION $JBOSS_HOME \
+    && tar xf wildfly-$WILDFLY_VERSION.tar.gz -C /opt \
+    && ln -s /opt/$WILDFLY_VERSION /opt/wildfly \
     && rm wildfly-$WILDFLY_VERSION.tar.gz \
     && chown -R jboss:0 ${JBOSS_HOME} \
     && chmod -R g+rw ${JBOSS_HOME}
