@@ -28,11 +28,13 @@ USER root
 # Add the WildFly distribution to /opt, and make wildfly the owner of the extracted tar content
 # Make sure the distribution is available from a well-known place
 RUN cd /tmp \
+	&& groupadd -r jboss \
+	&& useradd -r -g jboss -d /opt/wildfly -s /sbin/nologin wildfly
 	&& wget https://download.jboss.org/wildfly/16.0.0.Final/wildfly-16.0.0.Final.tar.gz \
     && tar xf wildfly-$WILDFLY_VERSION.tar.gz -C /opt \
     && ln -s /opt/$WILDFLY_VERSION /opt/wildfly \
     && rm wildfly-$WILDFLY_VERSION.tar.gz \
-    && chown -R jboss: ${JBOSS_HOME} \
+    && chown -RH jboss: ${JBOSS_HOME} \
     && chmod -R g+rw ${JBOSS_HOME}
 
 # Ensure signals are forwarded to the JVM process correctly for graceful shutdown
