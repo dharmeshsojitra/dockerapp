@@ -30,6 +30,7 @@ USER root
 RUN cd $HOME \
 	&& wget https://download.jboss.org/wildfly/16.0.0.Final/wildfly-16.0.0.Final.tar.gz \
     && tar xf wildfly-$WILDFLY_VERSION.tar.gz \
+    && mkdir /opt/jboss/wildfly \
     && mv $HOME/wildfly-$WILDFLY_VERSION $JBOSS_HOME \
     && rm wildfly-$WILDFLY_VERSION.tar.gz \
     && chown -R jboss:0 ${JBOSS_HOME} \
