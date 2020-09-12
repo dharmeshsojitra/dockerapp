@@ -32,7 +32,7 @@ RUN cd /tmp \
     && tar xf wildfly-$WILDFLY_VERSION.tar.gz -C /opt \
     && ln -s /opt/$WILDFLY_VERSION /opt/wildfly \
     && rm wildfly-$WILDFLY_VERSION.tar.gz \
-    && chown -R jboss:0 ${JBOSS_HOME} \
+    && chown -R jboss: ${JBOSS_HOME} \
     && chmod -R g+rw ${JBOSS_HOME}
 
 # Ensure signals are forwarded to the JVM process correctly for graceful shutdown
