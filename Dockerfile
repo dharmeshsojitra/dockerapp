@@ -1,7 +1,4 @@
 # Use latest Fedora image as the base
-docker logout
-docker login --username=dharmeshsojitra --password=Chel5ea@123
-
 FROM centos:latest
 MAINTAINER http://www.centos.org
 
