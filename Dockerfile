@@ -34,6 +34,10 @@ RUN groupadd -r jboss
     RUN tar xf wildfly-$WILDFLY_VERSION.tar.gz -C /opt
     RUN ln -s /opt/$WILDFLY_VERSION /opt/wildfly
     RUN rm wildfly-$WILDFLY_VERSION.tar.gz
+    RUN cd /opt
+    RUN mkdir jboss
+    RUN cd jboss
+    RUN mkdir wildfly
     RUN chown -R jboss: ${JBOSS_HOME}
     RUN chmod -R g+rw ${JBOSS_HOME}
 
