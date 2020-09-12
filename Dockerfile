@@ -17,6 +17,8 @@ RUN yum -y update && yum clean all
 RUN yum -y install java-1.8.0-openjdk.x86_64 java-1.8.0-openjdk-devel.x86_64 \ 
     augeas bsdtar shadow-utils && yum clean all
 
+RUN yum -y install wget
+
 # Set the WILDFLY_VERSION env variable
 ENV WILDFLY_VERSION 16.0.0.Final
 ENV JBOSS_HOME /opt/jboss/wildfly
