@@ -25,14 +25,12 @@ ENV JBOSS_HOME /opt/jboss/wildfly
 
 USER root
 
-#RUN cd /opt \
-#	&& mkdir -p jboss \
-#	&& cd jboss \
-#	&& mkdir -p wildfly \
-#	&& groupadd -r jboss \
-#	&& useradd -r -g jboss -d /opt/wildfly -s /sbin/nologin jboss 
-
-RUN adduser jboss -g jboss	
+RUN cd /opt \
+	&& mkdir -p jboss \
+	&& cd jboss \
+	&& mkdir -p wildfly \
+	&& groupadd -r jboss \
+	&& useradd -r -g jboss -d /opt/wildfly -s /sbin/nologin jboss 
 
 # Add the WildFly distribution to /opt, and make wildfly the owner of the extracted tar content
 # Make sure the distribution is available from a well-known place
