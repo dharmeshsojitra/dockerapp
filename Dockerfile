@@ -50,7 +50,7 @@ USER jboss
 # Expose the ports we're interested in
 EXPOSE 8080
 
-ADD target/docker-demo-0.0.1-SNAPSHOT.war /opt/jboss/wildfly/standalone/deployments/
+ADD /var/lib/jenkins/workspace/DOCKER_APP/target/dockerapp.war /opt/jboss/wildfly/standalone/deployments/
 
 # Set the default command to run on boot
 # This will boot WildFly in the standalone mode and bind to all interface
