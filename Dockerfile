@@ -1,6 +1,6 @@
 FROM quay.io/wildfly/wildfly-centos7
  
-ADD helloworld.war /opt/jboss/wildfly/standalone/deployments/
+ADD target/dockerapp.war /opt/jboss/wildfly/standalone/deployments/
 
 EXPOSE 8080
 
