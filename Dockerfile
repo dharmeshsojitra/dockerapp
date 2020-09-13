@@ -25,12 +25,12 @@ ENV JBOSS_HOME /opt/jboss/wildfly
 
 USER root
 
-RUN cd /opt \
-	&& mkdir -p jboss \
-	&& cd jboss \
-	&& mkdir -p wildfly \
-	&& groupadd -r jboss \
-	&& useradd -r -g jboss -d /opt/wildfly -s /sbin/nologin jboss 
+#RUN cd /opt \
+#	&& mkdir -p jboss \
+#	&& cd jboss \
+#	&& mkdir -p wildfly \
+#	&& groupadd -r jboss \
+#	&& useradd -r -g jboss -d /opt/wildfly -s /sbin/nologin jboss 
 
 RUN adduser jboss -g jboss	
 
@@ -41,7 +41,7 @@ RUN cd $HOME \
     && tar xf wildfly-$WILDFLY_VERSION.tar.gz \
     && mv $HOME/wildfly-$WILDFLY_VERSION $JBOSS_HOME \
     && rm wildfly-$WILDFLY_VERSION.tar.gz \
-    && chown -R jboss:0 ${JBOSS_HOME} \
+    && chown -R jboss:jboss ${JBOSS_HOME} \
     && chmod -R g+rw ${JBOSS_HOME}
 
 # Ensure signals are forwarded to the JVM process correctly for graceful shutdown
