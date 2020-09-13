@@ -51,10 +51,10 @@ USER jboss
 EXPOSE 8080
 
 ARG BUILD_DIR=build
-COPY ${BUILD_DIR}
+#COPY ${BUILD_DIR}
 
 #ADD /var/lib/jenkins/workspace/DOCKER_APP/target/dockerapp.war /opt/jboss/wildfly/standalone/deployments/
-COPY dockerapp.war /opt/wildfly/standalone/deployments/ 
+COPY ${BUILD_DIR}/dockerapp.war /opt/wildfly/standalone/deployments/ 
 
 # Set the default command to run on boot
 # This will boot WildFly in the standalone mode and bind to all interface
