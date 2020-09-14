@@ -11,8 +11,8 @@ public class HelloController {
         return "Hi " + name + " !";
     }
 
-    @RequestMapping("/world/{name}")
+    @RequestMapping("/docker/{name}")
     String sayHelloWorld(@PathVariable String name) {
-        return "Hello " + name + ", welcome to the world !";
+        return "Hello " + name + ", welcome to the docker world !";
     }
 }
