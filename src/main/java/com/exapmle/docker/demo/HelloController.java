@@ -7,17 +7,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
     @RequestMapping("/hello/{name}")
-    String hello(@PathVariable String name) {
+    String sayHelloWorld(@PathVariable String name) {
         return "Hi, " + name + " !!! !";
     }
 
     @RequestMapping("/docker/{name}")
-    String sayHelloWorld(@PathVariable String name) {
+    String sayHelloDocker(@PathVariable String name) {
         return "Hello " + name + ", welcome to the docker world !";
     }
     
     @RequestMapping("/openshift/{name}")
-    String sayHelloWorld(@PathVariable String name) {
+    String sayHelloOpenshift(@PathVariable String name) {
         return "Hello " + name + ", welcome to the Openshitf world !";
     }
 }
