@@ -8,16 +8,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
     @RequestMapping("/hello/{name}")
     String sayHelloWorld(@PathVariable String name) {
-        return "Hello " + name + ", welcome to the world !";
+        return "Hello " + name + ", welcome to the world!";
     }
 
     @RequestMapping("/docker/{name}")
     String sayHelloDocker(@PathVariable String name) {
-        return "Hello " + name + ", welcome to the docker world !";
+        return "Hello " + name + ", welcome to the docker world!";
     }
     
     @RequestMapping("/openshift/{name}")
     String sayHelloOpenshift(@PathVariable String name) {
-        return "Hello " + name + ", welcome to the Openshitf world !";
+        return "Hello " + name + ", welcome to the Openshitf world!";
     }
 }
