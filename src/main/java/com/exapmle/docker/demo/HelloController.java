@@ -20,7 +20,7 @@ public class HelloController {
     }
     
     
-    
+    //hello Openshift method
     @RequestMapping("/openshift/{name}")
     String sayHelloOpenshift(@PathVariable String name) {
         return "Hello " + name + ", welcome to the Openshitf world!";
