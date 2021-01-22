@@ -19,7 +19,6 @@ public class HelloController {
         return "Hello " + name + ", welcome to the docker world!";
     }
     
-    
     //hello Openshift method
     @RequestMapping("/openshift/{name}")
     String sayHelloOpenshift(@PathVariable String name) {
