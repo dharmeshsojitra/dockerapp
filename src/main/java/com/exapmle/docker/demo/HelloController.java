@@ -13,10 +13,13 @@ public class HelloController {
         return "Hello " + name + ", welcome to the world!";
     }
 
+    //hello Docker method
     @RequestMapping("/docker/{name}")
     String sayHelloDocker(@PathVariable String name) {
         return "Hello " + name + ", welcome to the docker world!";
     }
+    
+    
     
     @RequestMapping("/openshift/{name}")
     String sayHelloOpenshift(@PathVariable String name) {
