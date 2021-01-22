@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
     @RequestMapping("/hello/{name}")
     String sayHelloWorld(@PathVariable String name) {
-        return "Hello, " + name + "!";
+        return "Hello " + name + ", welcome to the world !";
     }
 
     @RequestMapping("/docker/{name}")
