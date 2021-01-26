@@ -10,8 +10,12 @@ public class HelloController {
     //hello world method
     @RequestMapping("/hello/{name}")
     String sayHelloWorld(@PathVariable String name) {
-    String h = System.getProperty("example.property.1").toString();
-        return "Hello " + name + ", welcome to the world!"+ "-----"+h;
+        
+    String h = System.getProperty("example.property.1");
+        if(h==null || h.equals("")){
+            h="its blank";
+        }
+        return "Hello " + name + ", welcome to the world!"+ "----->"+h;
     }
 
     //hello Docker method
