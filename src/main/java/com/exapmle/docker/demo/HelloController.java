@@ -9,7 +9,7 @@ public class HelloController {
 
     @RequestMapping("/hello/{name}")
     String sayHelloWorld(@PathVariable String name) {
-        return "Hello " + name + ", welcome to the world!!!!!";
+        return "Hello " + name + ", welcome to the world!";
     }
 
     //hello Docker method
