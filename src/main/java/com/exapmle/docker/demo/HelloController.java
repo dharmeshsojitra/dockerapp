@@ -6,8 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloController {
-    
-    //hello world method
+
     @RequestMapping("/hello/{name}")
     String sayHelloWorld(@PathVariable String name) {
         return "Hello " + name + ", welcome to the world!!!!!";
