@@ -9,19 +9,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Slf4j
 public class HelloController {
+
     @RequestMapping("/hello/{name}")
     String sayHelloWorld(@PathVariable String name) {
-
-        return "Hello, " + name + "!";
+        return "Hello " + name + ", welcome to Demo! Hurray!!!";
     }
 
+    //hello Docker method
     @RequestMapping("/docker/{name}")
     String sayHelloDocker(@PathVariable String name) {
-        return "Hello " + name + ", welcome to the docker world !";
+        return "Hello " + name + ", welcome to the docker world!";
     }
     
+    //hello Openshift method
     @RequestMapping("/openshift/{name}")
     String sayHelloOpenshift(@PathVariable String name) {
-        return "Hello " + name + ", welcome to the Openshitf world !";
+        return "Hello " + name + ", welcome to the Openshitf world!";
     }
 }
